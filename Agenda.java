@@ -97,6 +97,7 @@ public class Agenda implements AgendaInterface {
 	 * this contact must be removed and the resulted list must be empty. This function must return
 	 * a Entry object if the contact has been removed successfully and null in the opposite.
 	 */
+	 //En principio nada raro
 	public Entry removeFirst() {
 		Entry p = null;
 
@@ -127,6 +128,9 @@ public class Agenda implements AgendaInterface {
 	 * unchanged after the saving. The function returns true if the agenda was successfully
 	 * saved and false otherwise.
 	 */
+	 //La función crea(si no existe) el fichero independientemente de si está vacía o no
+	//Si la agenda tiene al menos un contacto entra en el if, retorna 'true' pero no se ejecuta la siguiente línea de código luego escribe nada en el fichero
+	//Además, dentro del while no avanza 
 	public boolean saveAgenda() throws IOException {
 		AgendaNode cur = first;
 		String line;
@@ -157,6 +161,10 @@ public class Agenda implements AgendaInterface {
 	 * does not exists, the agenda remain unchanged.
 	 * The function returns true is the file exists and false otherwise.
 	 */
+	 //No controla la excepción en caso de que el ficero no exista(de esto no estoy muy segura)
+	 //En caso de que la agenda no esté vacía, no elimina los existentes
+	 //Sin terminar
+	 
 	public boolean loadAgenda() throws IOException {
 		FileReader filein = new FileReader("agendafile.txt");
 		BufferedReader bufferin = new BufferedReader(filein);
